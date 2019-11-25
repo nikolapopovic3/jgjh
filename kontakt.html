@@ -1,0 +1,196 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/png" href="Images/Logo.png" />
+    <link rel="stylesheet" type="text/css" href="Css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="js/slajdsou.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="Css/style.css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"
+        integrity="sha384-FzT3vTVGXqf7wRfy8k4BiyzvbNfeYjK+frTVqZeNDFl8woCbF0CYG6g2fMEFFo/i"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $("#menuOpener").click(function () {
+                if ($(".navbar-menu").hasClass("active")) {
+                    $(".navbar-menu").removeClass("active");
+                } else {
+                    $(".navbar-menu").addClass("active");
+                }
+
+            });
+        });
+    </script>
+
+<script type="text/javascript">
+
+
+        function validate() {
+
+
+            if (document.myForm.ime.value == "") {
+                alert("Ime je obavezno polje!");
+                document.myForm.ime.focus();
+                return false;
+            }
+
+            if (document.myForm.prezime.value == "") {
+                alert("Prezime je obavezno polje!");
+                document.myForm.prezime.focus();
+                return false;
+            }
+
+
+            if (document.myForm.email.value == '') {
+                alert("Email je obaveyno polje!");
+                document.myForm.email.focus();
+                return false;
+            }
+            if (document.myForm.email.value.indexOf('@') == -1) {
+                alert("Email adresa nije u odgovarajućem formatu!");
+                document.myForm.email.focus();
+                return false;
+
+            }
+
+            
+            return confirm("Uspešno ste zakazali svoj termin!")
+            return (true);
+        }
+
+    </script>
+
+    <title>AHILEJ teretane</title>
+</head>
+
+<body class="index">
+
+    <div class="page-content-wrapper">
+        <div class="navbar" id="index-nav">
+            <div style="padding-left: 0px;" id="logo-navbar">
+                <a href="index.html"> <img src="Images/Logo.png" width="100"
+                        height="70"> </a>
+            </div>
+            <div>
+                <ul id="list-navbar">
+
+                    <li><a href="index.html">Početna</a></li>
+                    <li><a href="galerija.html">Galerija</a></li>
+                    <li><a class="active" href="kontakt.html">Kontakt</a></li>
+                    <li><a href="lokacije.html">Lokacije</a></li>
+                    <span id="menuOpener"><i class="fa fa-bars"></i></span>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mobile-nav">
+            <nav class="navbar-menu">
+
+                <ul class="menu-listing">
+
+                    <li><a href="index.html">Početna</a></li>
+                    <li><a href="galerija.html">Galerija</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                    <li><a href="lokacije.html">Lokacije</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="telo">
+
+            <div class="kontakt">
+                <p style="color: white;">Rezervišite svoj termin</p>
+                <form action="kontakt.html" name="myForm" onsubmit="return(validate());">
+
+                    <div style="color: white;" class="label">
+                        <label style="color: white;">Ime*:</label>
+                    </div>
+                    <div>
+                        <input class="polja" name="ime" type="text" />
+                    </div>
+
+                    <div class="label">
+                        <label style="color: white;">Prezime*:</label>
+                    </div>
+                    <div>
+                        <input class="polja" name="prezime" type="text" />
+                    </div>
+
+                    <div class="label">
+                        <label style="color: white;">E-mail*:</label>
+                    </div>
+                    <div>
+                        <input class="polja" name="email" type="text" />
+                    </div>
+
+                    <div class="label">
+                        <label style="color: white;">Broj telefona: </label>
+                    </div>
+                    <div>
+                        <input class="polja" name="telefon" type="text"
+                            onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;" />
+                    </div>
+
+                    <div class="label">
+                        <label style="color: white;">Lokacija:</label>
+                    </div>
+                    <div>
+                    <select class="form-control" id="sel1">
+                            <option>Voždovac</option>
+                            <option>Banovo Brdo</option>
+                            <option>Čukarica</option>
+                            <option>Novi Beograd</option>
+                            <option>Konjarnik</option>
+                    </select>
+                    </div>
+                    <div class="label">
+                        <label style="color: white;">Dodatni zahtevi: </label>
+                    </div>
+                    <div>
+                        <textarea class="polja" rows="5" placeholder="Unesite zahteve"></textarea>
+                    </div>
+                    <div class="dugmici">
+                        <div class="submit">
+                            <input style="border: 1px; background-color: white;color: black" type="submit" value="Zakazi" />
+                        </div>
+
+                        <div class="reset">                          
+                            <input style="border: 1px; background-color: white;color: black" type="reset" value="Resetuj">                            
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="telo red ">
+                
+                <div>
+                    <p>
+                        Kontaktirajte nas na: 
+                    <a href="mailto:ahilejdirekcija@gmail.com">ahilejdirekcija@gmail.com</a></p>
+                    
+                    <p>
+                       Social media: 
+                    </p>
+                    <div>
+                        <a href="https://sr-rs.facebook.com/pages/Ahilej/193069280899975"><i class="fa fa-facebook-official"></i></a>
+                        <a href="https://www.instagram.com"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.twitter.com"><i class="fa fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
